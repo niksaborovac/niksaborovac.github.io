@@ -70,6 +70,7 @@ if (lightbox && typeof lightbox.showModal === 'function') {
   const image = lightbox.querySelector('.lightbox-image');
   const title = lightbox.querySelector('.lightbox-title');
   const description = lightbox.querySelector('.project-description');
+  const report = lightbox.querySelector('.project-report');
   const close = lightbox.querySelector('.lightbox-close');
   const imageControls = lightbox.querySelector('.project-image-controls');
   const imageCaption = lightbox.querySelector('.project-image-caption');
@@ -96,6 +97,16 @@ if (lightbox && typeof lightbox.showModal === 'function') {
       previousFocus = link;
       title.textContent = link.dataset.document;
       if (description) description.textContent = link.dataset.description || '';
+      if (report) {
+        report.hidden = !link.dataset.report;
+        if (link.dataset.report) {
+          report.href = link.dataset.report;
+          report.setAttribute('aria-label', `View report for ${title.textContent} (PDF, opens in a new tab)`);
+        } else {
+          report.removeAttribute('href');
+          report.removeAttribute('aria-label');
+        }
+      }
       try {
         projectImages = JSON.parse(link.dataset.images || '[]');
       } catch {
