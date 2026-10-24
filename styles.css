@@ -67,16 +67,14 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
 .gallery-position { color: var(--muted); font-size: 13px; min-width: 68px; text-align: center; font-variant-numeric: tabular-nums; }
 .internship-page { max-width: 1440px; margin: 0 auto; padding: 70px clamp(24px, 5vw, 80px) 80px; }
 .internship-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 70px; padding-bottom: 60px; }
-.internship-eyebrow { margin: 0 0 20px; font-size: 13px; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); }
 .internship-intro h1 { margin: 0 0 24px; font-size: clamp(38px, 4.1vw, 58px); line-height: 1.08; letter-spacing: -.045em; font-weight: 700; }
 .internship-location { margin: 0 0 8px; font-size: 17px; line-height: 1.5; }
 .internship-period { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
-.internship-intro-copy { margin: 28px 0 0; max-width: 48ch; font-size: 17px; line-height: 1.7; font-weight: 400; }
 .internship-photo { margin: 0; min-width: 0; }
 .internship-photo img { width: 100%; height: auto; }
 .internship-photo figcaption { margin-top: 10px; font-size: 11px; line-height: 1.5; color: var(--muted); text-align: right; }
 .internship-photo a { text-underline-offset: 3px; }
-.internship-tasks h2, .internship-outcome h2 { margin: 0 0 28px; font-size: clamp(25px, 2.5vw, 32px); font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+.internship-tasks h2 { margin: 0 0 28px; font-size: clamp(25px, 2.5vw, 32px); font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
 .internship-task { border-top: 1px solid #ddd; }
 .internship-task:last-child { border-bottom: 1px solid #ddd; }
 .internship-task summary { display: grid; grid-template-columns: 190px minmax(0, 1fr) 24px; align-items: center; gap: 24px; padding: 24px 0; cursor: pointer; list-style: none; }
@@ -91,8 +89,6 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
 .internship-task[open] .internship-task-toggle::after { display: none; }
 .internship-task-copy { padding: 0 48px 28px 214px; }
 .internship-task-copy p { max-width: 78ch; margin: 0; font-size: 17px; font-weight: 400; line-height: 1.75; }
-.internship-outcome { max-width: 840px; padding-top: 64px; }
-.internship-outcome p { margin: 0 0 18px; font-size: 18px; line-height: 1.75; font-weight: 400; }
 .contact-page { max-width: 1100px; margin: 0 auto; padding: 87px 35px 70px; }
 .contact-grid { display: grid; grid-template-columns: 1fr 420px; gap: 105px; align-items: start; }
 .contact-details { text-align: center; padding-top: 24px; }
@@ -156,15 +152,13 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
   .internship-page { padding: 40px 24px 48px; }
   .internship-hero { grid-template-columns: 1fr; gap: 32px; padding-bottom: 44px; }
   .internship-intro h1 { font-size: 44px; }
-  .internship-intro-copy { font-size: 16px; margin-top: 24px; }
   .internship-task summary { grid-template-columns: minmax(0, 1fr) 20px; gap: 8px 16px; padding: 20px 0; }
   .internship-task-date, .internship-task-title { grid-column: 1; }
   .internship-task-date { font-size: 12px; }
   .internship-task-title { font-size: 18px; }
   .internship-task-toggle { grid-column: 2; grid-row: 1 / 3; }
   .internship-task-copy { padding: 0 0 24px; }
-  .internship-task-copy p, .internship-outcome p { font-size: 16px; line-height: 1.75; }
-  .internship-outcome { padding-top: 44px; }
+  .internship-task-copy p { font-size: 16px; line-height: 1.75; }
   .site-header { height: auto; min-height: 66px; gap: 15px; padding: 18px 18px; align-items: flex-start; }
   .monogram { font-size: 21px; line-height: 1.2; }
   .site-nav { justify-content: flex-end; flex-wrap: wrap; gap: 10px 17px; }
