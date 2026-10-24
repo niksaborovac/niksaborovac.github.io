@@ -6,7 +6,7 @@ if (galleryTrack && pauseButton) {
   const group = galleryTrack.querySelector('.gallery-group');
   const duplicate = group.cloneNode(true);
   duplicate.setAttribute('aria-hidden', 'true');
-  duplicate.inert = true;
+  duplicate.querySelectorAll('a').forEach(link => { link.tabIndex = -1; });
   galleryTrack.append(duplicate);
   galleryTrack.classList.add('is-ready');
   pauseButton.addEventListener('click', () => {
@@ -20,17 +20,22 @@ const lightbox = document.querySelector('.lightbox');
 if (lightbox && typeof lightbox.showModal === 'function') {
   const image = lightbox.querySelector('.lightbox-image');
   const title = lightbox.querySelector('.lightbox-title');
+  const description = lightbox.querySelector('.project-description');
   const close = lightbox.querySelector('.lightbox-close');
   let previousFocus;
   document.querySelectorAll('[data-document]').forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
-      previousFocus = link;
+      previousFocus = link.closest('[aria-hidden="true"]')
+        ? Array.from(groupLinks()).find(original => original.href === link.href) || pauseButton
+        : link;
       image.src = link.href;
       image.alt = link.dataset.document;
       title.textContent = link.dataset.document;
+      if (description) description.textContent = link.dataset.description || '';
       if (galleryTrack) galleryTrack.style.animationPlayState = 'paused';
       lightbox.showModal();
+      document.body.classList.add('lightbox-open');
     });
   });
   close.addEventListener('click', () => lightbox.close());
@@ -41,9 +46,14 @@ if (lightbox && typeof lightbox.showModal === 'function') {
     }
   });
   lightbox.addEventListener('close', () => {
+    document.body.classList.remove('lightbox-open');
     if (galleryTrack) galleryTrack.style.animationPlayState = '';
     previousFocus?.focus();
   });
+}
+
+function groupLinks() {
+  return document.querySelectorAll('.gallery-group:not([aria-hidden="true"]) [data-document]');
 }
 
 const contactForm = document.querySelector('.contact-form');
