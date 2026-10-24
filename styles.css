@@ -25,8 +25,8 @@ img { display: block; max-width: 100%; height: auto; }
 .discipline { position: absolute; top: 58%; transform: translateY(-50%); height: 1.45em; overflow: hidden; width: 30%; font-size: clamp(20px, 2.65vw, 36px); letter-spacing: .055em; font-weight: 800; line-height: 1.45; text-align: center; }
 .discipline-left { left: 0; }
 .discipline-right { right: 0; }
-.discipline-track { display: flex; flex-direction: column; animation: disciplines 20s infinite; }
-@keyframes disciplines { 0%, 14% { transform: translateY(0); } 20%, 34% { transform: translateY(-16.6667%); } 40%, 54% { transform: translateY(-33.3333%); } 60%, 74% { transform: translateY(-50%); } 80%, 94% { transform: translateY(-66.6667%); } 100% { transform: translateY(-83.3333%); } }
+.discipline-track { display: flex; flex-direction: column; animation: disciplines 16s infinite; }
+@keyframes disciplines { 0%, 17.5% { transform: translateY(0); } 25%, 42.5% { transform: translateY(-20%); } 50%, 67.5% { transform: translateY(-40%); } 75%, 92.5% { transform: translateY(-60%); } 100% { transform: translateY(-80%); } }
 .about-page { max-width: 1240px; margin: 0 auto; }
 .story { min-height: 610px; position: relative; display: grid; place-items: center; padding: 100px 8%; isolation: isolate; }
 .story p { font-size: clamp(21px, 2.15vw, 29px); line-height: 1.65; letter-spacing: .035em; text-align: justify; max-width: 820px; margin: 0; }
