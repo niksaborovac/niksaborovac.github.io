@@ -141,6 +141,19 @@ if (lightbox && typeof lightbox.showModal === 'function') {
   });
 }
 
+const copyEmailButton = document.querySelector('[data-copy-email]');
+if (copyEmailButton) {
+  copyEmailButton.addEventListener('click', async () => {
+    const status = document.querySelector('[data-copy-status]');
+    try {
+      await navigator.clipboard.writeText(copyEmailButton.dataset.copyEmail);
+      status.textContent = 'Email address copied.';
+    } catch {
+      status.textContent = 'Could not copy. Select the email address to copy it.';
+    }
+  });
+}
+
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', event => {

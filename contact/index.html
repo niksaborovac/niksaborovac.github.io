@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <title>Contact — Nikša Borovac</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../styles.css?v=internship-2">
-  <script src="../site.js" defer></script>
+  <link rel="stylesheet" href="../styles.css?v=contact-1">
+  <script src="../site.js?v=contact-1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -24,7 +24,16 @@
     <section class="contact-details" aria-labelledby="contact-heading">
       <h1 id="contact-heading">CONTACT</h1>
       <p class="intro">Open to collaborations, internships, and professional opportunities worldwide.</p>
-      <div class="email-block"><p>E - mail</p><a href="mailto:niksa.borovac@stud.plus.ac.at">niksa.borovac@stud.plus.ac.at</a></div>
+      <div class="email-block">
+        <p>E - mail</p>
+        <div class="email-row">
+          <a href="mailto:niksa.borovac@stud.plus.ac.at">niksa.borovac@stud.plus.ac.at</a>
+          <button class="copy-email" type="button" data-copy-email="niksa.borovac@stud.plus.ac.at" aria-label="Copy email address" title="Copy email address">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+          </button>
+        </div>
+        <p class="copy-status" data-copy-status role="status"></p>
+      </div>
       <p class="location">Currently based in Salzburg, Austria</p>
     </section>
     <section class="contact-form-card" aria-labelledby="form-heading">
@@ -41,7 +50,6 @@
       </form>
     </section>
   </div>
-  <a class="profile-link" href="https://github.com/niksaborovac" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 </main>
 
 </body>
