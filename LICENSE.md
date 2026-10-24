@@ -1,0 +1,1 @@
+Portfolio content remains the property of its respective owners. Reuse requires their permission. Inter and Inter Tight are licensed under the SIL Open Font License 1.1; their full licences are included in assets/licenses.
