@@ -103,7 +103,7 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
 .copy-email:hover { background: #f5f5f5; border-color: var(--ink); }
 .email-block .copy-status { min-height: 18px; margin: 8px 0 0; font-size: 12px; line-height: 1.5; font-weight: 400; letter-spacing: 0; color: var(--muted); }
 .location { margin-top: 100px; font-size: 23px; letter-spacing: .03em; font-weight: 600; }
-.contact-bathymetry { display: block; width: calc(100% + var(--contact-bleed)); max-width: none; height: 94px; margin-left: calc(-1 * var(--contact-bleed)); color: #bcbcbc; mask-image: linear-gradient(to right, #000 70%, transparent); pointer-events: none; }
+.contact-bathymetry { display: block; width: calc(100% + var(--contact-bleed)); max-width: none; height: 120px; margin-top: 10px; margin-left: calc(-1 * var(--contact-bleed)); color: #bcbcbc; mask-image: linear-gradient(to right, #000 70%, transparent); pointer-events: none; }
 .contact-form-card { padding: 30px 32px 34px; border: 1px solid var(--ink); border-radius: 8px; }
 .contact-form-card h2 { margin: 0 0 22px; font-size: 32px; font-weight: 700; letter-spacing: -.03em; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -193,7 +193,7 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
   .project-card figcaption { font-size: 15px; padding-left: 10px; padding-right: 10px; }
   .document-preview { height: 330px; }
   .contact-page { --contact-bleed: 24px; padding: 50px 24px 40px; }
-  .contact-bathymetry { height: 78px; }
+  .contact-bathymetry { height: 100px; }
   .contact-grid { grid-template-columns: 1fr; gap: 50px; }
   .contact-details { padding: 0; }
   .email-block { margin-top: 38px; }
