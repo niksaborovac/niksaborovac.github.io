@@ -33,8 +33,8 @@ img { display: block; max-width: 100%; height: auto; }
 .story strong { font-weight: 600; }
 .story-picture { --child-right: 21px; --survey-width: calc(100% - 216.67px - var(--child-right) - 16px); position: relative; height: 354px; isolation: isolate; }
 .story img { position: absolute; z-index: 2; width: auto; max-width: 100%; object-fit: contain; }
-.story-child { height: 330px; right: var(--child-right); bottom: 0; opacity: 1; filter: invert(1) brightness(.74) invert(1); }
-.story-survey-grid { position: absolute; width: var(--survey-width); height: 290px; left: 0; top: 25px; z-index: 0; background-image: linear-gradient(#f0f0f0 .7px, transparent .7px), linear-gradient(90deg, #f0f0f0 .7px, transparent .7px); background-size: 37px 37px; border-top: 1px solid #f0f0f0; border-left: 1px solid #f0f0f0; }
+.story-child { height: 330px; right: calc(var(--child-right) + 12px); bottom: 0; opacity: 1; filter: invert(1) brightness(.74) invert(1); }
+.story-survey-grid { position: absolute; width: calc(var(--survey-width) + 48px); height: 315px; left: 0; top: 0; z-index: 0; background-image: linear-gradient(#f0f0f0 .7px, transparent .7px), linear-gradient(90deg, #f0f0f0 .7px, transparent .7px); background-size: 37px 37px; border-top: 1px solid #f0f0f0; border-left: 1px solid #f0f0f0; }
 .story-survey-geometry { position: absolute; left: 0; top: 25px; width: var(--survey-width); height: 290px; z-index: 1; opacity: .55; }
 .story-north { position: absolute; left: calc(var(--survey-width) - 24px); top: 15px; width: 24px; height: 68px; z-index: 3; opacity: .5; }
 .story-separator { width: calc(100% + 2 * var(--about-edge)); height: 20px; flex-shrink: 0; position: relative; border-top: 1px solid #d8d8d8; margin: 8px calc(-1 * var(--about-edge)) 15px; }
