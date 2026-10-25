@@ -156,15 +156,24 @@ if (copyEmailButton) {
 
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    const data = new FormData(contactForm);
-    const subject = `Portfolio enquiry from ${data.get('name')}`;
-    const body = `${data.get('message')}\r\n\r\nFrom: ${data.get('name')}\r\nEmail: ${data.get('email')}`;
-    // Open a draft in the visitor's mail app; no message is sent automatically.
-    const recipient = contactForm.dataset.recipient;
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.querySelector('[data-form-status]').textContent = 'Your email app should open with a draft. If it does not, use the email link on this page.';
+  window.formspree = window.formspree || function () {
+    (window.formspree.q = window.formspree.q || []).push(arguments);
+  };
+  window.formspree('initForm', {
+    formElement: '#contact-form',
+    formId: contactForm.dataset.formId,
+    useDefaultStyles: false,
+    disable: ({ form }) => {
+      const button = form.querySelector('[data-fs-submit-btn]');
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      form.setAttribute('aria-busy', 'true');
+    },
+    enable: ({ form }) => {
+      const button = form.querySelector('[data-fs-submit-btn]');
+      button.disabled = false;
+      button.textContent = 'Send Message';
+      form.removeAttribute('aria-busy');
+    },
   });
 }
