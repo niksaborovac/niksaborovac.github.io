@@ -92,8 +92,8 @@ body:has(.gallery-page) .site-header { flex-shrink: 0; }
 .internship-task-copy p { max-width: 78ch; margin: 0; font-size: 17px; font-weight: 400; line-height: 1.75; }
 body:has(.contact-page) { display: flex; flex-direction: column; min-height: 100svh; }
 body:has(.contact-page) .site-header { flex-shrink: 0; }
-.contact-page { --contact-gap: clamp(60px, 10vw, 145px); --contact-bleed: max(35px, calc((100vw - 1180px) / 2 + 35px)); display: flex; flex-direction: column; flex: 1; gap: 24px; width: 100%; max-width: 1180px; margin: 0 auto; padding: clamp(24px, 8svh, 87px) 35px 0; }
-.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: var(--contact-gap); align-items: start; }
+.contact-page { --contact-max-width: 1180px; --contact-form-width: 420px; --contact-gap: clamp(60px, 10vw, 145px); --contact-bleed: max(35px, calc((100vw - var(--contact-max-width)) / 2 + 35px)); display: flex; flex-direction: column; flex: 1; gap: 24px; width: 100%; max-width: var(--contact-max-width); margin: 0 auto; padding: clamp(24px, 8svh, 87px) 35px 0; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) var(--contact-form-width); gap: var(--contact-gap); align-items: start; }
 .contact-details { text-align: center; padding-top: 31px; }
 .contact-details h1 { margin: 0 0 12px; font-size: 32px; font-weight: 700; }
 .contact-details .intro { font-size: 18px; line-height: 1.45; letter-spacing: .035em; max-width: 390px; margin: 0 auto; }
@@ -107,7 +107,7 @@ body:has(.contact-page) .site-header { flex-shrink: 0; }
 .email-block .copy-status { min-height: 18px; margin: 8px 0 0; font-size: 12px; line-height: 1.5; font-weight: 400; letter-spacing: 0; color: var(--muted); }
 .location { margin-top: 100px; font-size: 23px; letter-spacing: .03em; font-weight: 600; }
 .contact-details .location { margin-bottom: 0; }
-.contact-bathymetry { display: block; flex-shrink: 0; width: calc(100% - 420px - var(--contact-gap) + var(--contact-bleed)); max-width: none; height: 120px; margin: auto 0 0 calc(-1 * var(--contact-bleed)); color: #bcbcbc; mask-image: linear-gradient(to right, #000 70%, transparent); pointer-events: none; }
+.contact-bathymetry { display: block; flex-shrink: 0; width: calc(100% - var(--contact-form-width) - var(--contact-gap) + var(--contact-bleed)); max-width: none; height: 120px; margin: auto 0 0 calc(-1 * var(--contact-bleed)); color: #bcbcbc; mask-image: linear-gradient(to right, #000 70%, transparent); pointer-events: none; }
 .contact-form-card { padding: 30px 32px 34px; border: 1px solid var(--ink); border-radius: 8px; }
 .contact-form-card h2 { margin: 0 0 22px; font-size: 32px; font-weight: 700; letter-spacing: -.03em; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -140,6 +140,10 @@ body:has(.contact-page) .site-header { flex-shrink: 0; }
 .project-report { display: inline-block; margin-top: 24px; font-size: 14px; line-height: 1.5; text-underline-offset: 5px; }
 .project-report[hidden] { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (min-width: 1600px) {
+  .contact-page { --contact-max-width: min(1680px, calc(100vw - 420px)); --contact-form-width: clamp(420px, 22vw, 540px); --contact-gap: clamp(145px, 8vw, 220px); }
+  .contact-grid { flex: 1; align-items: center; }
+}
 @media (max-width: 850px) {
   .internship-page { padding-top: 48px; }
   .internship-hero { gap: 35px; }
